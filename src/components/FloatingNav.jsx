@@ -123,16 +123,18 @@ const FloatingNav = () => {
                           : "hover:bg-neutral-100 text-neutral-600 hover:text-black",
                       )}
                     >
-                      <div
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
                         className={cn(
-                          "h-8 w-8 rounded-lg flex items-center justify-center text-xl transition-transform duration-300 group-hover:scale-110",
+                          "h-8 w-8 rounded-lg flex items-center justify-center text-xl shadow-sm",
                           location.pathname === item.path
                             ? "bg-white/20"
-                            : "bg-neutral-100 group-hover:bg-white shadow-sm",
+                            : "bg-neutral-100",
                         )}
                       >
                         {item.icon}
-                      </div>
+                      </motion.div>
                       <div className="flex flex-col">
                         <span className="text-xs font-bold leading-none">
                           {item.name}
